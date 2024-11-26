@@ -6,13 +6,13 @@
   }
   
   .overlay {
-    background-color: rgba(0, 0, 0, 0.7); /* Adds a dark transparent overlay */
+    background-color: rgba(0, 0, 0, 0.486); /* Adds a dark transparent overlay */
     height: 100%;
     width: 100%;
   }
   
   .login-form-container {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.651);
     padding: 30px;
     border-radius: 8px;
   }
@@ -21,7 +21,36 @@
     font-size: 2rem;
   }
   
+  .recaptcha-text {
+    font-size: 0.8rem;
+    max-width: 500px; /* Restrict width for proper wrapping */
+    line-height: 1.5; /* Improve line spacing */
+  }
+  
   .login-form-container a:hover {
     text-decoration: underline;
+  }
+  
+  /* Align 'Sign In' Label with Custom Spacing */
+.custom-heading {
+    margin-left: 3rem; /* Adjust margin-left as needed */
+    text-align: left;
+  }
+  
+  /* Styling Input Fields */
+  .custom-input {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    border: 1px solid #fff; /* White border */
+  }
+  
+  .custom-input::placeholder {
+    color: #aaa; /* Light gray for placeholder */
+  }
+  
+  .custom-input:focus {
+    background-color: #222; /* Darker black when focused */
+    color: #fff; /* Keep text white */
+    border-color: #ff4500; /* Optional focus border color */
   }
   
