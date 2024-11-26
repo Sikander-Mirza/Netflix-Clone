@@ -15,15 +15,15 @@ const Login = () => {
       }}
     >
       <div className="overlay">
-        <Container className="d-flex justify-content-center align-items-center vh-100">
+        <Container className="w-50">
           <Row>
-            <Col md={12} className="login-form-container">
-              {/* Added Custom CSS for Alignment */}
+            <Col md={12} className="login-form-container mt-5 w-75">
               <h1 className="text-white mb-4 text-left custom-heading">Sign In</h1>
               <Form>
                 <Form.Group controlId="formBasicEmail" className="d-flex justify-content-center">
                   <Form.Control
-                    className="w-50 custom-input"
+                    style={{ backgroundColor: "black" }}
+                    className="w-50 custom-input text-white"
                     type="email"
                     placeholder="Email or mobile number"
                   />
@@ -31,15 +31,15 @@ const Login = () => {
 
                 <Form.Group controlId="formBasicPassword" className="d-flex justify-content-center mt-3">
                   <Form.Control
-                  style={{backgroundColor:"black"}}
-                    className="w-50 custom-input"
+                    style={{ backgroundColor: "black" }}
+                    className="w-50 custom-input text-white"
                     type="password"
                     placeholder="Password"
                   />
                 </Form.Group>
 
                 <div className="d-flex justify-content-center mt-4">
-                  <Button variant="danger" className="w-50" type="submit">
+                  <Button className="w-50" type="submit" style={{ backgroundColor: "red",borderBlockColor:"red", borderLeftColor:"red", borderRightColor:"red" }}>
                     Sign In
                   </Button>
                 </div>
@@ -60,15 +60,16 @@ const Login = () => {
                 </a>
               </div>
 
-              <div className="d-flex justify-content-between align-items-center text-white mt-3">
+              <div className="d-flex justify-content-between align-items-center text-white mt-5 ">
                 <Form.Check
+                style={{marginLeft:"7.5rem"}}
                   type="checkbox"
                   id="rememberMe"
                   label="Remember me"
                 />
               </div>
 
-              <div className="text-center mt-3">
+              <div className="mt-3" style={{marginLeft:"7.5rem"}}>
                 <span className="text-white">
                   New to Netflix?{" "}
                   <a href="#" className="text-decoration-none text-white">
@@ -76,12 +77,6 @@ const Login = () => {
                   </a>
                 </span>
               </div>
-              <p className="text-white text-center mt-4 mx-auto recaptcha-text">
-                This page is protected by Google reCAPTCHA to ensure you're not a bot.{" "}
-                <a href="#" className="text-decoration-none text-white">
-                  Learn more.
-                </a>
-              </p>
             </Col>
           </Row>
         </Container>

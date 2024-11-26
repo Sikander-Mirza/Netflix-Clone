@@ -15,7 +15,14 @@
     background-color: rgba(0, 0, 0, 0.651);
     padding: 30px;
     border-radius: 8px;
+    min-height: 400px; /* Maintain a minimum height for the container */
+    max-width: 100%; /* Limit the width for consistency */
+    margin: 0 auto; /* Center horizontally */
+    display: flex;
+    flex-direction: column; /* Align content vertically */
+    justify-content: space-between; /* Ensure even spacing between elements */
   }
+  
   
   .login-form-container h1 {
     font-size: 2rem;
@@ -39,7 +46,7 @@
   
   /* Styling Input Fields */
   .custom-input {
-    background-color: #000; /* Black background */
+    background-color: #00000098; /* Black background */
     color: #fff; /* White text */
     border: 1px solid #fff; /* White border */
   }
