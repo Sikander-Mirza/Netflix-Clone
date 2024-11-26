@@ -11,35 +11,48 @@ const Login = () => {
         backgroundImage: `url(${wall})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "100vh"
+        height: "100vh",
       }}
     >
       <div className="overlay">
-        <Container className="w-50">
-          <Row>
-            <Col md={12} className="login-form-container mt-5 w-75">
+        <Container className="d-flex justify-content-center align-items-center vh-100">
+          <Row className="w-75">
+            <Col
+              xs={12}
+              sm={10}
+              md={8}
+              lg={6}
+              className="login-form-container mx-auto "
+            >
               <h1 className="text-white mb-4 text-left custom-heading">Sign In</h1>
               <Form>
-                <Form.Group controlId="formBasicEmail" className="d-flex justify-content-center">
+                <Form.Group controlId="formBasicEmail" className="mt-3 d-flex justify-content-center align-items-center">
                   <Form.Control
-                    style={{ backgroundColor: "black" }}
-                    className="w-50 custom-input text-white"
+                  style={{backgroundColor:"black"}}
+                    className="custom-input text-white w-75"
                     type="email"
                     placeholder="Email or mobile number"
                   />
                 </Form.Group>
 
-                <Form.Group controlId="formBasicPassword" className="d-flex justify-content-center mt-3">
+                <Form.Group controlId="formBasicPassword" className="mt-3 d-flex justify-content-center align-items-center">
                   <Form.Control
-                    style={{ backgroundColor: "black" }}
-                    className="w-50 custom-input text-white"
+                  style={{backgroundColor:"black"}}
+                    className="custom-input text-white w-75"
                     type="password"
                     placeholder="Password"
                   />
                 </Form.Group>
 
-                <div className="d-flex justify-content-center mt-4">
-                  <Button className="w-50" type="submit" style={{ backgroundColor: "red",borderBlockColor:"red", borderLeftColor:"red", borderRightColor:"red" }}>
+                <div className="mt-4 text-center">
+                  <Button
+                    className="w-75"
+                    type="submit"
+                    style={{
+                      backgroundColor: "red",
+                      borderColor: "red",
+                    }}
+                  >
                     Sign In
                   </Button>
                 </div>
@@ -47,8 +60,8 @@ const Login = () => {
 
               <div className="text-center text-white mt-4">
                 <span>OR</span>
-                <div className="d-flex justify-content-center mt-2">
-                  <Button variant="secondary" className="w-50">
+                <div className="mt-2">
+                  <Button variant="secondary" className="w-75">
                     Use a Sign-In Code
                   </Button>
                 </div>
@@ -60,16 +73,15 @@ const Login = () => {
                 </a>
               </div>
 
-              <div className="d-flex justify-content-between align-items-center text-white mt-5 ">
+              <div className="text-center mt-4 text-white">
                 <Form.Check
-                style={{marginLeft:"7.5rem"}}
                   type="checkbox"
                   id="rememberMe"
                   label="Remember me"
                 />
               </div>
 
-              <div className="mt-3" style={{marginLeft:"7.5rem"}}>
+              <div className="text-center mt-3">
                 <span className="text-white">
                   New to Netflix?{" "}
                   <a href="#" className="text-decoration-none text-white">
