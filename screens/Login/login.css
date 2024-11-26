@@ -1,0 +1,27 @@
+.login-page {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+  
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.7); /* Adds a dark transparent overlay */
+    height: 100%;
+    width: 100%;
+  }
+  
+  .login-form-container {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 30px;
+    border-radius: 8px;
+  }
+  
+  .login-form-container h1 {
+    font-size: 2rem;
+  }
+  
+  .login-form-container a:hover {
+    text-decoration: underline;
+  }
+  
