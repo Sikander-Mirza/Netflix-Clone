@@ -24,7 +24,7 @@ const Login = () => {
               lg={6}
               className="login-form-container mx-auto "
             >
-              <h1 className="text-white mb-4 text-left custom-heading">Sign In</h1>
+              <h1 className="text-white mb-4 text-left custom-heading" style={{marginLeft:"3rem"}}>Sign In</h1>
               <Form>
                 <Form.Group controlId="formBasicEmail" className="mt-3 d-flex justify-content-center align-items-center">
                   <Form.Control
@@ -73,7 +73,7 @@ const Login = () => {
                 </a>
               </div>
 
-              <div className="text-center mt-4 text-white">
+              <div className="mt-4 text-white" style={{marginLeft:"3rem"}}>
                 <Form.Check
                   type="checkbox"
                   id="rememberMe"
@@ -81,10 +81,10 @@ const Login = () => {
                 />
               </div>
 
-              <div className="text-center mt-3">
-                <span className="text-white">
+              <div className="mt-3" style={{marginLeft:"3rem"}}>
+                <span className="text-white ml-4">
                   New to Netflix?{" "}
-                  <a href="#" className="text-decoration-none text-white">
+                  <a href="#" className="text-decoration-none text-white ">
                     Sign up now.
                   </a>
                 </span>
