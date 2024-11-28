@@ -1,0 +1,41 @@
+.movie-slider-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #555 transparent;
+  }
+  
+  .movie-slider-row::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .movie-slider-row::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 4px;
+  }
+  
+  .movie-card {
+    min-width: 150px;
+    max-width: 150px;
+    flex: none;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.1);
+  }
+  
+  .movie-image {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .movie-title {
+    font-size: 0.8rem;
+    color: white;
+    margin-top: 8px;
+  }
+  

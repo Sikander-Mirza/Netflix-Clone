@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ReactPlayer from "react-player";
 import Navbar from "../../components/Navbar/navbar";
-
+import MovieSlider from "../../components/MovieSlider/movieslider"
 const Home = () => {
   const [movie, setMovie] = useState(null);
   const [trailerUrl, setTrailerUrl] = useState("");
@@ -132,6 +132,25 @@ const Home = () => {
           filter: isVideoVisible ? "brightness(0.5)" : "none",
         }}
       ></div>
+    </div>
+
+    <div style={{ backgroundColor: "#141414", minHeight: "100vh", padding: "20px" }}>
+      <MovieSlider
+        title="Trending Now"
+        fetchUrl={`https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}`}
+      />
+      <MovieSlider
+        title="Top Rated"
+        fetchUrl={`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}`}
+      />
+      <MovieSlider
+        title="Action Movies"
+        fetchUrl={`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=28`}
+      />
+      <MovieSlider
+        title="Comedy Movies"
+        fetchUrl={`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=35`}
+      />
     </div>
     </>
   );
