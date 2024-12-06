@@ -55,7 +55,6 @@ const Home = () => {
 
   return (
     <>
-    <Navbar/>
     <div className="home-page" style={{ position: "relative", height: "100vh" }}>
       {/* Background Video */}
       {trailerUrl && isVideoVisible && (
