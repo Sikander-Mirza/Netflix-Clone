@@ -147,10 +147,10 @@ const Home = () => {
         title="Action Movies"
         fetchUrl={`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=28`}
       />
-      {/* <MovieSlider
+      <MovieSlider
         title="Comedy Movies"
         fetchUrl={`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=35`}
-      /> */}
+      />
     </div>
     </>
   );
