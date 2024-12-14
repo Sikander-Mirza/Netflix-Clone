@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
@@ -50,6 +50,9 @@ const Navbar = ({ movies }) => {
                             Movies
                         </a>
                     </li>
+                    <Link className="nav-link" to="/watch-list">
+            Watch List
+          </Link>
                 </ul>
                 <ul className="navbar-nav ms-auto">
                     <li className="nav-item">

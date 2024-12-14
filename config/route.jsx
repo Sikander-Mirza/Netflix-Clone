@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar/navbar';
 import SearchResults from '../components/SearchResults/SearchResults';
 import Home from '../screens/Home/home';
 import axios from 'axios';
+import WatchListPage from '../components/WatchLaterList/watchlaterlist';
 
 const App = () => {
     const [movies, setMovies] = useState([]);
@@ -35,6 +36,8 @@ const App = () => {
                     path="/search"
                     element={<SearchResults movies={movies} />}
                 />
+                <Route path="/watch-list" element={<WatchListPage/>} />
+
             </Routes>
         </Router>
     );

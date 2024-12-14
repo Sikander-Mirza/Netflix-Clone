@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Modal, Button } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { useDispatch, useSelector } from "react-redux";
+import { addMovie } from "../../config/watchlistslice.jsx"; // Adjust path as needed
 import "./MovieSlider.css";
 
 const MovieSlider = ({ title, fetchUrl }) => {
+  const dispatch = useDispatch();
+  const watchList = useSelector((state) => state.watchList.movies); // Retrieve movies from Redux store
+
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [showModal, setShowModal] = useState(false);
-
-  // TMDB image base URL
-  const imageBaseUrl = "https://image.tmdb.org/t/p/w500";
 
   // Fetch movies from the API
   useEffect(() => {
     const fetchMovies = async () => {
       try {
         const response = await axios.get(fetchUrl);
-        setMovies(response.data.results);
+        setMovies(response.data.results || []); // Ensure it defaults to an empty array
       } catch (error) {
         console.error("Failed to fetch movies:", error);
       }
@@ -38,11 +39,35 @@ const MovieSlider = ({ title, fetchUrl }) => {
     setShowModal(false);
   };
 
+  // Add movie to the watch list
+  const handleAddToWatchList = () => {
+    if (selectedMovie) {
+      const isAlreadyAdded = watchList.some((movie) => movie.id === selectedMovie.id);
+
+      if (isAlreadyAdded) {
+        alert(`${selectedMovie.title || selectedMovie.name} is already in your Watch List!`);
+      } else {
+        dispatch(
+          addMovie({
+            id: selectedMovie.id,
+            title: selectedMovie.title || selectedMovie.name,
+            poster_path: selectedMovie.poster_path,
+            overview: selectedMovie.overview,
+          })
+        );
+        alert(`${selectedMovie.title || selectedMovie.name} added to Watch List!`);
+      }
+    }
+  };
+
+  // TMDB image base URL
+  const imageBaseUrl = "https://image.tmdb.org/t/p/w500";
+
   return (
     <div className="movie-slider my-4">
       <h3 className="text-white mb-3">{title}</h3>
 
-      {/* Slider Container */}
+      {/* Movie Slider Row */}
       <div className="movie-slider-row">
         {movies.map((movie) => (
           <div
@@ -60,7 +85,7 @@ const MovieSlider = ({ title, fetchUrl }) => {
         ))}
       </div>
 
-      {/* React Bootstrap Modal */}
+      {/* Modal for Movie Details */}
       <Modal show={showModal} onHide={handleClose} centered>
         {selectedMovie && (
           <>
@@ -83,6 +108,9 @@ const MovieSlider = ({ title, fetchUrl }) => {
             <Modal.Footer>
               <Button variant="secondary" onClick={handleClose}>
                 Close
+              </Button>
+              <Button variant="primary" onClick={handleAddToWatchList}>
+                Add to Watch List
               </Button>
             </Modal.Footer>
           </>
