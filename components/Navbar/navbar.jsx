@@ -11,7 +11,6 @@ const Navbar = ({ movies }) => {
         const value = e.target.value.toLowerCase();
         setSearchTerm(value);
 
-        // Redirect to search results page with the search term
         if (value.trim() !== '') {
             navigate('/search', { state: { searchTerm: value } });
         }
