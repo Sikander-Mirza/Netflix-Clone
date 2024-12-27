@@ -4,7 +4,7 @@ import { Container, Row, Col, Card, Spinner } from 'react-bootstrap';
 import axios from 'axios';
 
 const SearchResults = () => {
-    const location = useLocation(); // Get the search term passed via navigation
+    const location = useLocation(); 
     const [allMovies, setAllMovies] = useState([]); // All movies
     const [filteredMovies, setFilteredMovies] = useState([]); // Filtered movies
     const [loading, setLoading] = useState(true); // Loading indicator
