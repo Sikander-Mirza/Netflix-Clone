@@ -43,7 +43,6 @@ const SearchResults = () => {
         fetchMovies();
     }, []); // Runs only once when the component is loaded
 
-    // Filter movies whenever the search term or movie list changes
     useEffect(() => {
         if (searchTerm) {
             const filtered = allMovies.filter(
