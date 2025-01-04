@@ -3,6 +3,7 @@ import axios from "axios";
 import ReactPlayer from "react-player";
 import Navbar from "../../components/Navbar/navbar";
 import MovieSlider from "../../components/MovieSlider/movieslider"
+import Chatbot from "../../components/ChatBot/chatbot";
 const Home = () => {
   const [movie, setMovie] = useState(null);
   const [trailerUrl, setTrailerUrl] = useState("");
@@ -151,6 +152,7 @@ const Home = () => {
         fetchUrl={`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=35`}
       />
     </div>
+    <Chatbot/>
     </>
   );
 };
