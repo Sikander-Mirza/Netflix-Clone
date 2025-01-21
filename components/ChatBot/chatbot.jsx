@@ -41,7 +41,6 @@ const Chatbot = () => {
         💬
       </div>
 
-      {/* Chatbox */}
       {isOpen && (
         <div className="chatbox">
           <div className="chatbox-messages">
