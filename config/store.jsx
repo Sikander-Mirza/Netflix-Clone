@@ -1,10 +1,10 @@
 // store.js
 import { configureStore } from '@reduxjs/toolkit';
-import watchListReducer from './watchListSlice';
+import watchListSlice from './watchListSlice';
 
 const store = configureStore({
   reducer: {
-    watchList: watchListReducer,
+    watchList: watchListSlice,
   },
 });
 
