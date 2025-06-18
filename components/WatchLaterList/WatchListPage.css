@@ -1,0 +1,29 @@
+.movie-card:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.custom-modal-style .modal-content {
+  background-color: #121212;
+  color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.custom-modal-style .modal-header,
+.custom-modal-style .modal-footer {
+  border: none;
+}
+
+.custom-modal-style .modal-title {
+  font-size: 1.5rem;
+}
+
+.custom-modal-style iframe {
+  border-radius: 8px;
+}

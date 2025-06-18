@@ -86,36 +86,50 @@ const MovieSlider = ({ title, fetchUrl }) => {
       </div>
 
       {/* Modal for Movie Details */}
-      <Modal show={showModal} onHide={handleClose} centered>
-        {selectedMovie && (
-          <>
-            <Modal.Header closeButton>
-              <Modal.Title>{selectedMovie.title || selectedMovie.name}</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <img
-                src={`${imageBaseUrl}${selectedMovie.poster_path}`}
-                alt={selectedMovie.title || selectedMovie.name}
-                className="img-fluid"
-                style={{ width: "100%", height: "auto", maxHeight: "700px", objectFit: "cover" }}
-              />
-              <div className="mt-3">
-                <p><strong>Overview:</strong> {selectedMovie.overview}</p>
-                <p><strong>Release Date:</strong> {selectedMovie.release_date || "N/A"}</p>
-                <p><strong>Rating:</strong> {selectedMovie.vote_average || "N/A"}</p>
-              </div>
-            </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-              <Button variant="primary" onClick={handleAddToWatchList}>
-                Add to Watch List
-              </Button>
-            </Modal.Footer>
-          </>
-        )}
-      </Modal>
+      <Modal show={showModal} onHide={handleClose} centered size="lg" dialogClassName="custom-modal">
+  {selectedMovie && (
+    <>
+      <Modal.Header closeButton className="bg-dark text-white border-0">
+        <Modal.Title className="fs-4 fw-semibold">
+          {selectedMovie.title || selectedMovie.name}
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body className="bg-dark text-light">
+        <div className="d-flex flex-column flex-md-row gap-4">
+          <img
+            src={`${imageBaseUrl}${selectedMovie.poster_path}`}
+            alt={selectedMovie.title || selectedMovie.name}
+            className="rounded shadow"
+            style={{
+              width: "100%",
+              maxWidth: "280px",
+              height: "auto",
+              objectFit: "cover",
+            }}
+          />
+          <div className="movie-details">
+            <p className="mb-3"><strong>Overview:</strong><br /> {selectedMovie.overview}</p>
+            <p><strong>Release Date:</strong> {selectedMovie.release_date || "N/A"}</p>
+            <p><strong>Rating:</strong> ⭐ {selectedMovie.vote_average || "N/A"}</p>
+          </div>
+        </div>
+      </Modal.Body>
+      <Modal.Footer className="bg-dark border-0">
+        <Button variant="outline-light" onClick={handleClose}>
+          Close
+        </Button>
+        <Button
+          variant="warning"
+          className="text-dark fw-semibold"
+          onClick={handleAddToWatchList}
+        >
+          Add to Watch List
+        </Button>
+      </Modal.Footer>
+    </>
+  )}
+</Modal>
+
     </div>
   );
 };
